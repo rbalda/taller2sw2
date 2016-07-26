@@ -13,7 +13,7 @@ Para este taller realice lo siguiente:
 
 5\. Programe las pruebas unitarias ayudándose de las particiones de equivalencias identificadas.
 
-6\. Añada los archivos necesarios y configúrelos para realizar las pruebas con travis y coveralls.
+6\. Añada los archivos necesarios con travis y coveralls.
 
 5\. Corra localmente las pruebas y verifique que se ejecutan sin errores.
 
