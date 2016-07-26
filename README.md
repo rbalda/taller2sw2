@@ -7,14 +7,18 @@ Para este taller realice lo siguiente:
 
 2\. Ingrese a la carpeta `cd taller2sw2`
 
-3\. Cree una nueva rama con el numbre de su usuario de github `git checkout -b su_nombre_usuario_github`
+3\. Cree una nueva rama con el nombre de su usuario de github `git checkout -b su_nombre_usuario_github`
 
-4\. Codifique el programa, las pruebas para este, y los archivos necesarios para realizar las pruebas con travis y coveralls
+4\. Codifique el programa.
 
-5\. Pruebe localmente que las pruebas se ejecuten sin errores.
+5\. Programe las pruebas unitarias ayudándose de las particiones de equivalencias identificadas.
+
+6\. Añada los archivos necesarios y configúrelos para realizar las pruebas con travis y coveralls.
+
+5\. Corra localmente las pruebas y verifique que se ejecutan sin errores.
 
 6\. Realice el commit.
 
-7\. Haga el push sobre su rama `git push origin su_nombre_usuario_github`
+7\. Haga el push sobre su rama `git push origin su_nombre_usuario_github`(puede hacer tantos commits y push como sean necesarios hasta que todo este correcto)
 
-__*Nota:*__ puede realizar los push necesarios hasta que todo este correcto, tambien puede consultar documentacion o ejercicios anteriores en caso de alguna duda, tambien se permiten preguntas a la persona encargada del taller.
+__*Nota:*__ En caso de alguna duda puede consultar documentos, ejercicios realizados anteriormente o preguntar directamente a la persona encargada del taller.
