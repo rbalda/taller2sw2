@@ -16,42 +16,42 @@ class CrearPaciente(TestCase):
         self.crear_paciente()
         self.assertIsInstance(self.paciente,Paciente,'paciente creado exitosamente')
 '''
-from prestamo_clase import Prestamo
+from acceso_clase import Acceso
 
 
-class ProbarSistemaPrestamo(unittest.TestCase):
+class ProbarSistemaAcceso(unittest.TestCase):
 
     def test_escenario1(self):
 
-        acceso_edi = Prestamo()
+        acceso_edi = Acceso()
         identi = acceso_edi.verificar_id(identificacion=0012345)
         resultado = acceso_edi.permiso(id=identi, hora=10, dia=2)
         self.assertEqual(resultado,1)
 
     def test_escenario2(self):
 
-        acceso_edi = Prestamo()
+        acceso_edi = Acceso()
         identi = acceso_edi.verificar_id(identificacion=1234567)
         resultado = acceso_edi.permiso(id=identi, hora=10, dia=2)
         self.assertEqual(resultado,1)
 
     def test_escenario3(self):
 
-        acceso_edi = Prestamo()
+        acceso_edi = Acceso()
         identi = acceso_edi.verificar_id(identificacion=0012345)
         resultado = acceso_edi.permiso(id=identi, hora=18, dia=6)
         self.assertEqual(resultado,0)
                          
     def test_escenario4(self):
 
-        acceso_edi = Prestamo()
+        acceso_edi = Acceso()
         identi = acceso_edi.verificar_id(identificacion=1234567)
         resultado = acceso_edi.permiso(id=identi, hora=5, dia=2)
         self.assertEqual(resultado,0)
 
     def test_escenario5(self):
 
-        acceso_edi = Prestamo()
+        acceso_edi = Acceso()
         identi = acceso_edi.verificar_id(identificacion=1234567)
         resultado = acceso_edi.permiso(id=identi, hora=5, dia=7)
         self.assertEqual(resultado,0)
