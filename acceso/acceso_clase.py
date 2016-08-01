@@ -1,7 +1,7 @@
 class Acceso():
 
 
-def verificar_id(identificacion):
+    def verificar_id(identificacion):
         numero = str(identificacion)
         esEmpleado = 0
         if (numero[0] == "0" and numero[1] == "0"):
@@ -11,7 +11,7 @@ def verificar_id(identificacion):
 
 
 
-def permiso(id,hora,dia):
+    def permiso(id,hora,dia):
         if(id == 0):
             if(dia == 6 or dia == 7):
                 if(hora>=10 and hora<=15):
