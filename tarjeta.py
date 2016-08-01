@@ -3,6 +3,6 @@ def esValida(codigo):
 
 def esEmpleado(codigo):
     if not esValida(codigo):
-        raise Exception "La tarjeta no es valida!"
+        raise ValueError("La tarjeta no es valida!")
     return codigo.startsWith("00")
     
