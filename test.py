@@ -38,6 +38,16 @@ class pruebas(unittest.TestCase):
         valor1 = programa.verificar_acceso("1212345", 5,20)
         valor2 = "Acceso Denegado"
         self.assertEqual(valor1, valor2)
+    def test_function_8(self):
+        programa = Programa()
+        valor1 = programa.verificar_acceso("1212345", 5,-1)
+        valor2 = "Acceso Denegado"
+        self.assertEqual(valor1, valor2)
+    def test_function_9(self):
+        programa = Programa()
+        valor1 = programa.verificar_acceso("0012345", 6,11)
+        valor2 = "Acceso Concedido"
+        self.assertEqual(valor1, valor2)
 
 if __name__ == '__main__':
     unittest.main()
