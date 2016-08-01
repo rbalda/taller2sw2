@@ -5,7 +5,7 @@ class Tarjeta:
         self.digitos = ""
         if(type(codigo)!= str):
             return ""
-        if(codigo. lenght <7):
+        if(len(3) <7):
             return ""
         else:
             self.digitos = codigo[1:2]
