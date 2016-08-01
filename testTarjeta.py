@@ -30,7 +30,7 @@ class Test(unittest.TestCase):
 
     def test7(self):  #dia valor ENTERO ENTre 1 y 7
         t = Tarjeta()
-        self.assertEquals(t.esHorarioValido('0012345', 1, 10), 1)
+        self.assertEquals(t.esHorarioValido('1012345', 1, 6), 0)
 
     def test8(self):  #dia menor a 1
         t = Tarjeta()
