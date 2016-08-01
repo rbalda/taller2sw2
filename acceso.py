@@ -1,10 +1,3 @@
-"""
-Autor: Fernando Campaña
-Nombre de funcin: validar_tarjeta
-Entrada: codigo de acceso de la tarjeta
-Salida: string con el tipo de permiso
-Descripcion: Funcion que valida una tarjeta.
-"""
 def brindar_acceso(permiso, hora, dia):
 	dia_laborables = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes"}
 	fin_de_semana = {"Sabado", "Domingo"}

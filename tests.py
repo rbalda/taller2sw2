@@ -1,8 +1,6 @@
 import unittest
 import acceso
 import tarjeta
-
-
 # Create your tests here.
 # Creando casos de prueba
 class CrearPrestamo(unittest.TestCase):
