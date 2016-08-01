@@ -15,7 +15,7 @@ class ValidarAcceso(unittest.TestCase):
 	def test_validar_acceso_4(self):
 		acceso = Acceso()
 		self.assertEqual(acceso.validar_acceso("1345678",20,1), 0)
-	def test_validar_acceso_4(self):
+	def test_validar_acceso_5(self):
 		acceso = Acceso()
 		self.assertEqual(acceso.validar_acceso("1111345678",20,1), 0)
 	
