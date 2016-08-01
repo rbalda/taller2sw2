@@ -4,5 +4,5 @@ def esValida(codigo):
 def esEmpleado(codigo):
     if not esValida(codigo):
         raise ValueError("La tarjeta no es valida!")
-    return codigo.startsWith("00")
+    return codigo.startswith("00")
     
