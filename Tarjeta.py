@@ -36,13 +36,11 @@ class Tarjeta:
                             return 1
                       else:
                             return None
-
         else:
               print("El codigo que ingreso es incorrecto.")
               return None
 
     def abrir_puerta(self, numacceso):
-
          if(numacceso==1 or numacceso==2):  #ACCESO CONCEDIDO
              return 1
          else:                              #ACCESO DENEGADO
