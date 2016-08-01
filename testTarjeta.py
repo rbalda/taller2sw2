@@ -26,7 +26,7 @@ class Test(unittest.TestCase):
 
     def test6(self):  #dia valor entero
         t = Tarjeta()
-        self.assertEquals(t.esHorarioValido('0012345', 1, 10), 1)
+        self.assertEquals(t.esHorarioValido('1012345', 1, 10), 1)
 
     def test7(self):  #dia valor ENTERO ENTre 1 y 7
         t = Tarjeta()
@@ -51,6 +51,8 @@ class Test(unittest.TestCase):
     def test12(self):  #hora no está entre 24 horas
         t = Tarjeta()
         self.assertEquals(t.esHorarioValido('0012345', 10, 24), 0)
+
+
 
 if __name__ == '__main__':
     unittest.main()
