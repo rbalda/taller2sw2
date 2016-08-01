@@ -1,0 +1,13 @@
+language: python
+python:
+  - "2.7"
+
+before_install:
+  - "pip install -r requirements.txt"
+
+script:
+  - "cd control_acceso_edificio"
+  - "python manage.py test"
+  - "coverage run --source=control_acceso_edificio manage.py test"
+
+after_script: "coveralls"
