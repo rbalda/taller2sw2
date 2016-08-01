@@ -35,7 +35,7 @@ class SimpleTestCase(unittest.TestCase):
     def testK(self):
         assert acceso("0110234", "19:30:32", 1) == 0
 
-    def testJ(self):
+    def testL(self):
         assert acceso("0110234", "11:30:32", 7) == 0
 
         

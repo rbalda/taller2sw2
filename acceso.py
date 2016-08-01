@@ -38,5 +38,4 @@ def acceso(tarjeta, date, dia):
                 return 0
         else:
             return 0
-    return 0
 
