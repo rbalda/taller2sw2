@@ -24,6 +24,12 @@ class Control():
                                                 
                                         elif(codigo[0] != '0' and codigo[1] != '0'):
                                                 print("Es un estudiante")
+                                                if((dia == 1 or dia == 2 or dia ==3 or dia == 4 or dia == 5) and (hora > 8 and hora < 18 )):
+                                                        print("ACCESO PERMITIDO de 8 a 18 ")
+                                                else:
+                                                        print("ACCESO denegado solo de L - V de 8 a 18 ")
+                                                        
+                                                        
                                 
                                     
                                     
