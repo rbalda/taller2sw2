@@ -8,7 +8,7 @@ class Tarjeta:
         if(len(codigo) <7):
             return ""
         else:
-            self.digitos = codigo[1:2]
+            self.digitos = codigo[0:2]
 
         if(self.digitos == "00"):
             return "Empleado"
