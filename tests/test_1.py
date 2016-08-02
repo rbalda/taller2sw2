@@ -75,7 +75,7 @@ class AccesoTestCase(unittest.TestCase):
         self.acceso = Acceso(self.tarjeta, "sads", 12)
         assert self.acceso.validarAcceso() == False
 
-    def testValidarAcceso21(self):
+    def testValidarAcceso25(self):
         self.tarjeta = Tarjeta("00222223","Empleado")
         self.acceso = Acceso(self.tarjeta, 1, "sdssd")
         assert self.acceso.validarAcceso() == False
@@ -110,5 +110,15 @@ class AccesoTestCase(unittest.TestCase):
         self.acceso = Acceso(self.tarjeta, 1, 9)
         assert self.acceso.validarAcceso() == True
 
+    def testValidarHorarioEmpleado1(self):
+        self.tarjeta = Tarjeta("12222223","Empleado")
+        self.acceso = Acceso(self.tarjeta, 6, 11)
+        assert self.acceso.validarAcceso() == True
+
+    def testValidarHorarioEmpleado2(self):
+        self.tarjeta = Tarjeta("12222223","Empleado")
+        self.acceso = Acceso(self.tarjeta, 6, 9)
+        assert self.acceso.validarAcceso() == False
+        
 if __name__ == "__main__":
     unittest.main()   # run all tests
