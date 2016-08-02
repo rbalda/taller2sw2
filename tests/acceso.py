@@ -28,11 +28,6 @@ class Acceso:
 			return False
 		return True
 
-	def validarDia(self):
-		if(self.dia < 1 or self.dia >7):
-			return False
-		return True
-
 	def validarAcceso(self):
 		if(isinstance(self.hora, str)):
 			return False

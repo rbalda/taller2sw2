@@ -25,9 +25,9 @@ class AccesoTestCase(unittest.TestCase):
 
 
     def testCTiempo(self):
-       """test de hora entre 0 y 24"""
-       self.acceso = Acceso(self.tarjeta, 1, 18)
-       assert self.acceso.validarHora() == True
+        """test de hora entre 0 y 24"""
+        self.acceso = Acceso(self.tarjeta, 1, 18)
+        assert self.acceso.validarHora() == True
 
     def testTarjeta1(self):
         self.tarjeta = Tarjeta("0022222","Estudiante")
@@ -53,6 +53,10 @@ class AccesoTestCase(unittest.TestCase):
         self.tarjeta = Tarjeta("0011221","Empleado")
         assert self.tarjeta.validarUsuario() == False
 
+    def testValidarTipoUsuario3(self):
+        self.tarjeta = Tarjeta("0011221","Estudiante")
+        assert self.tarjeta.validarUsuario() == True
+
     def testValidarDigitos1(self):
         self.tarjeta = Tarjeta("0011222221","Empleado")
         assert self.tarjeta.validarUsuario() == False
@@ -66,22 +70,27 @@ class AccesoTestCase(unittest.TestCase):
         self.acceso = Acceso(self.tarjeta, 2, "sds")
         assert self.acceso.validarAcceso() == False
 
-    def testValidarAcceso1(self):
+    def testValidarAcceso21(self):
         self.tarjeta = Tarjeta("00222223","Estudiante")
         self.acceso = Acceso(self.tarjeta, "sads", 12)
         assert self.acceso.validarAcceso() == False
-    
+
+    def testValidarAcceso21(self):
+        self.tarjeta = Tarjeta("00222223","Empleado")
+        self.acceso = Acceso(self.tarjeta, 1, "sdssd")
+        assert self.acceso.validarAcceso() == False
+
     def testValidarAcceso3(self):
         self.tarjeta = Tarjeta("00222223","Estudiante")
         self.acceso = Acceso(self.tarjeta, 1, 34)
         assert self.acceso.validarAcceso() == False
-    
-    def testValidarAcceso3(self):
+
+    def testValidarAcceso34(self):
         self.tarjeta = Tarjeta("00222223","Estudiante")
         self.acceso = Acceso(self.tarjeta, 1, 9)
         assert self.acceso.validarAcceso() == True
 
-    def testValidarAcceso3(self):
+    def testValidarAcceso35(self):
         self.tarjeta = Tarjeta("00222223","Estudiante")
         self.acceso = Acceso(self.tarjeta, 1, 21)
         assert self.acceso.validarAcceso() == False
@@ -90,7 +99,7 @@ class AccesoTestCase(unittest.TestCase):
         self.tarjeta = Tarjeta("00222223","Estudiante")
         self.acceso = Acceso(self.tarjeta, 7, 10)
         assert self.acceso.validarAcceso() == False
-    
+
     def testValidarAcceso5(self):
         self.tarjeta = Tarjeta("00222223","Empleado")
         self.acceso = Acceso(self.tarjeta, 1, 11)
@@ -100,8 +109,6 @@ class AccesoTestCase(unittest.TestCase):
         self.tarjeta = Tarjeta("00222223","Empleado")
         self.acceso = Acceso(self.tarjeta, 1, 9)
         assert self.acceso.validarAcceso() == True
-    
-
 
 if __name__ == "__main__":
-    unittest.main() # run all tests
+    unittest.main()   # run all tests
