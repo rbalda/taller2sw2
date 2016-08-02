@@ -3,17 +3,12 @@ class Tarjeta:
 
     def obtener_hora(self,hora):
         h = int(hora[0])
-        h1 = (hora[1])
+        h1 = int(hora[1])
         return  h*10 + h1
-
-    def obtener_minutos(self,hora):
-        h = int(hora[3])
-        h1 = (hora[4])
-        return  h*10 + h1
-
+        
     def validar_tarjetas(self,usuario,codigo,tiempo,dia):
         hora = self.obtener_hora(tiempo)
-        minutos = self.obtener_minutos(tiempo)
+        #minutos = self.obtener_minutos(tiempo)
         if(len(codigo)==7):
               if(usuario == "TRABAJADOR"):
                 if(codigo[0]=="0" and codigo[1]=="0"):
