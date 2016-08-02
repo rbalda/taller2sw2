@@ -56,10 +56,6 @@ class ProbarSistemaAcceso(unittest.TestCase):
         resultado = acceso_edi.permiso(id=identi, hora=5, dia=7)
         self.assertEqual(resultado,0)
 
-'''
-Pruebas de actividad 2, módulo 3
-'''
-
     def test_escenario6(self):
 
         acceso_edi = Acceso()
