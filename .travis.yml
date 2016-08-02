@@ -3,9 +3,9 @@ python:
   - "3.4"
 
 install: 
-  - pip install pytest coverage python-coveralls 
+  - pip install nose coverage python-coveralls 
 script: 
-  - py.test
+  - nosetests --with-coverage
 
 after_success:
   - coveralls
