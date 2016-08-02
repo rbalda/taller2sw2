@@ -7,10 +7,6 @@ class Tarjeta:
         self.Codigo = codigo
         self.Saldo = saldo
 
-    def getNombre(self):
-        return self.Nombre
-    def getCodigo(self):
-        return self.Codigo
     def getSaldo(self):
         return self.Saldo
     def cobrar(self):
