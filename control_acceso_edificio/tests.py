@@ -4,11 +4,12 @@ import unittest
 '''
 respuesta(self,idTarjeta,edad,altura,genero):
 def respuesta(self,tipoUsuario,dia,hora):
-
+def respuesta(self,apellido,nombre,idTarjeta,saldo,dia):
 
 '''
 from validorTarjetas import Validador
 from resultadoPuerta import Puerta
+from pagoExpreso import sistemaPago
 
 
 class ProbarSistemaPuerta(unittest.TestCase):
@@ -96,6 +97,52 @@ class ProbarSistemaPuerta(unittest.TestCase):
         puerta = Puerta()
         resp = puerta.respuesta(tipoUsu,5,'10h00')
         self.assertEqual(resp,0)
+
+    def test_escenario13(self):
+        sistCobro = sistemaPago()
+        resp = sistCobro.respuesta('Ayala','Jorge','0012345',0.50,1)
+        self.assertEqual(resp,1)
+
+    def test_escenario14(self):
+        sistCobro = sistemaPago()
+        resp = sistCobro.respuesta('Ayala','Jorge','4512345',0.50,4)
+        self.assertEqual(resp,1)
+
+    def test_escenario15(self):
+        sistCobro = sistemaPago()
+        resp = sistCobro.respuesta('Ayala','Jorge','4512345',0.50,5)
+        self.assertEqual(resp,1)
+
+    def test_escenario16(self):
+        sistCobro = sistemaPago()
+        resp = sistCobro.respuesta('Ayala','Jorge','0012345',0.50,5)
+        self.assertEqual(resp,1)
+
+    def test_escenario17(self):
+        sistCobro = sistemaPago()
+        resp = sistCobro.respuesta('Ayala','Jorge','0012345',0.50,6)
+        self.assertEqual(resp,0)
+
+    def test_escenario18(self):
+        sistCobro = sistemaPago()
+        resp = sistCobro.respuesta('Ayala','Jorge','4512345',0.50,7)
+        self.assertEqual(resp,0)
+
+    def test_escenario19(self):
+        sistCobro = sistemaPago()
+        resp = sistCobro.respuesta('Ayala','Jorge','0012345',0.05,1)
+        self.assertEqual(resp,0)
+
+    def test_escenario20(self):
+        sistCobro = sistemaPago()
+        resp = sistCobro.respuesta('Ayala','Jorge','4512345',0.05,4)
+        self.assertEqual(resp,0)
+
+    def test_escenario21(self):
+        sistCobro = sistemaPago()
+        resp = sistCobro.respuesta('Ayala','Jorge','2345',0.05,4)
+        self.assertEqual(resp,0)
+
 
 if __name__ == '__main__':
     unittest.main()
