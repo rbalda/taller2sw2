@@ -5,12 +5,12 @@ class Tarjeta:
         self.digitos = ""
         if(type(codigo)!= str):
             return ""
-        if(len(3) <7):
+        if(len(codigo) <7):
             return ""
         else:
             self.digitos = codigo[1:2]
 
-        if(self. digitos == "00"):
+        if(self.digitos == "00"):
             return "Empleado"
         else:
             return "Estudiante"
