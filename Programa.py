@@ -69,3 +69,31 @@ class Programa():
             if(hora>=8 and hora<=18):
                 return True
         return False
+
+    #Modulo 3
+    #Sistema de pagos
+    #En esta función tarjeta va a ser un array que contiene [Código, Nombres y apellidos, Saldo]
+    def modulo_3_sistema_pagos(self, tarjeta, dia):
+        if(len(tarjeta) == 3):
+            codigo_tarjeta_valida = Programa.modulo_1_verificar_tarjeta(tarjeta[0])
+            if(codigo_tarjeta_valida[0]):
+                if(Programa.validar_dia_expreso(dia)):
+                    if(dia>=1 and dia <=4):
+                        if(Programa.saldo_disponible_valido(tarjeta[2])):
+                            tarjeta[2] -= 0.25
+                            return "Pasaje cobrado exitosamente"
+                    else:
+                        return "Pasaje cobrado exitosamente"
+        return "No se pudo cobrar el pasaje"
+    #Verifica si el saldo disponible en la tarjeta es válido
+    def saldo_disponible_valido(saldo):
+        if(isinstance( saldo, int ) or isinstance( saldo, float )):
+            if(saldo >= 0.25):
+                return True
+        return False
+    #Verifica si el día de expreso es válido
+    def validar_dia_expreso(dia):
+        if(isinstance( dia, int )):
+            if(dia >= 1 and dia <= 5):
+                return True
+        return False
