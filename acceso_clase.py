@@ -36,9 +36,14 @@ class Acceso():
             if(saldo<0.25):
                 return 0
             else:
+                saldo = descontar(saldo=saldo)
                 return 1
         else:
             if(dia == 5):
                 return 1
-            else
+            else:
                 return 0
+
+    def descontar(saldo):
+        nuevo_saldo = saldo - 0.25
+        return nuevo_saldo
