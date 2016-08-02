@@ -64,6 +64,11 @@ class CrearPrestamo(unittest.TestCase):
 		bus = tarjeta_expreso.cobrar_pasaje("estudiante", "Lunes", card)
 		self.assertEqual(bus, 1, None)
 
+	def test_estudiante_con_saldo_valido_dia_no_gratis_num(self):
+		card = Tarjeta("Fernando Emmanuel","Campaña Rojas", 9999999, 0.25)
+		bus = tarjeta_expreso.cobrar_pasaje("estudiante", 1, card)
+		self.assertEqual(bus, 1, None)
+
 	def test_estudiante_con_saldo_invalido_dia_no_gratis(self):
 		card = Tarjeta("Fernando Emmanuel","Campaña Rojas", 9999999, 0.24)
 		bus = tarjeta_expreso.cobrar_pasaje("estudiante", "Lunes", card)
@@ -78,6 +83,13 @@ class CrearPrestamo(unittest.TestCase):
 		card = Tarjeta("Fernando Emmanuel","Campaña Rojas", 9999999, 0.24)
 		bus = tarjeta_expreso.cobrar_pasaje("empleado", "Viernes", card)
 		self.assertEqual(bus, 1, None)
+
+	def test_estudiante_dia_invalido(self):
+		card = Tarjeta("Fernando Emmanuel","Campaña Rojas", 9999999, 0.25)
+		bus = tarjeta_expreso.cobrar_pasaje("empleado", "Sabado", card)
+		self.assertEqual(bus, 0, None)
+		bus = tarjeta_expreso.cobrar_pasaje("empleado", 6, card)
+		self.assertEqual(bus, 0, None)
 
 	def test_integracion_acceso_tarjeta_expreso(self):
 		dia = "Lunes"

@@ -21,3 +21,5 @@ def cobrar_pasaje(permiso, dia, tarjeta):
 			return 1
 	elif (dia in dias_gratis):
 		return 1
+	else:
+		return 0
