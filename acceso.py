@@ -26,6 +26,3 @@ class Acceso():
 		else:
 			print ("no acceso")
 			return 0
-
-	#if __name__ == '__main__':
-	#    validar_acceso("0000000", 10, 7)
