@@ -29,20 +29,20 @@ def validate_day_and_hour(message, day, hour):
             return False
     return True
 
-def system():
-    card_code = input("insert the digits of your card: ")
-    response = validate(card_code)
-    is_valid = response[0]
-    message = response[1]
-    if is_valid:
-        day = input ("insert the day of the week(1 to 7): ")
-        hour = input ("insert the hour(24 hrs): ")
-        if not validate_day_and_hour(message, day, hour):
-            return 0
-    else:
-        return 0
-    return 1
-
-if __name__=='__main__':
-    response = system()
-    print (response)
+# def system():
+#     card_code = input("insert the digits of your card: ")
+#     response = validate(card_code)
+#     is_valid = response[0]
+#     message = response[1]
+#     if is_valid:
+#         day = input ("insert the day of the week(1 to 7): ")
+#         hour = input ("insert the hour(24 hrs): ")
+#         if not validate_day_and_hour(message, day, hour):
+#             return 0
+#     else:
+#         return 0
+#     return 1
+#
+# if __name__=='__main__':
+#     response = system()
+#     print (response)

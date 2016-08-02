@@ -1,5 +1,7 @@
 from access_control import validate_day_and_hour
 from CardValidator import validate
+from Card import Card
+from ExpressPayment import payment
 import unittest
 
 class TestSystem(unittest.TestCase):
@@ -54,6 +56,19 @@ class TestSystem(unittest.TestCase):
     def test_restricted_hour_week_student_night(self):
         self.assertEqual(validate_day_and_hour("student","1","19:00"),False)
 
+    def test_valid_payment_monday_to_thursday(self):
+        card = Card()
+        card.credit=0.50
+        self.assertEqual(payment(1,card),1)
+
+    def test_valid_payment_friday(self):
+        card = Card()
+        self.assertEqual(payment(5,card),1)
+
+    def test_invalid_payment_monday_to_thursday(self):
+        card = Card()
+        card.credit=0
+        self.assertEqual(payment(1,card),0)
 
 if __name__ == '__main__':
     unittest.main()
