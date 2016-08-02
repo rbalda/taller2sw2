@@ -1,5 +1,6 @@
 import tarjeta
 import puerta
+import pasaje
 
 def test_sistema():
     empleado_tarjeta = "0054432" 
@@ -39,6 +40,12 @@ def test_exceptions():
     except ValueError:
         raisedException = True
     assert raisedException
+
+def test_pasaje(): 
+    assert pasaje.cancelado(0,0.0) == 0
+    assert pasaje.cancelado(0,-0.50) == 0
+    assert pasaje.cancelado(7,0.50) == 0
+    assert pasaje.cancelado(4,0.25) == 1
 
 test_sistema()
 test_horarios_invalidos()
