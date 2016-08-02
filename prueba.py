@@ -1,9 +1,13 @@
 import unittest
 from codigo import Control
+from pasaje import Pasaje
+from tarjeta import Tarjeta
 
 class AddTest(unittest.TestCase):
     def setUp(self):
       self.codigo = Control()
+      #self.pasaje = Pasaje()
+      #self.tarjeta = Tarjeta()
       pass
     def tearDown(self):
       pass
@@ -26,5 +30,8 @@ class AddTest(unittest.TestCase):
         self.assertEqual(self.codigo.valor_acceso('1221234',7, 14),None)
     def test_diaEstudiante2(self):
         self.assertEqual(self.codigo.valor_acceso('0021234',6, 14),None)
+    def test_cobrarPasaje(self):
+        self.assertEqual(self.pasaje.valor_cobrar(1,1,1),None)
+
 if __name__=='__main__':
    unittest.main()

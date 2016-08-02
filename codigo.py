@@ -30,6 +30,10 @@ class Control():
                                                         print("ACCESO denegado solo de L - V de 8 a 18 ")
                                                         
                                                         
+
+                                                        
+                                                        
+                                                        
                                 
                                     
                                     
