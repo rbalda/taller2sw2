@@ -6,6 +6,7 @@ before_install: "pip install -r requeriments.txt"
 
 script: 
  - python -m coverage run test.py
+ - python -m coverage run testintegration.py
 
 after_script:
   "coveralls"
