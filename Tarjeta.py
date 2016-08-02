@@ -52,8 +52,6 @@ class Tarjeta:
                     return 0
             elif(dia== "VIERNES"):
                 return 1
-            elif(dia== "SABADO" or dia=="DOMINGO"):
-                return 0
             else:
               print("El codigo que ingreso es incorrecto.")
               return 0

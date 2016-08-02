@@ -68,8 +68,6 @@ class TestTarjeta(unittest.TestCase):
         t = Tarjeta()
         acceso = t.validar_tarjetas("TRABAJADOR", "0096015", "12H00", "VIERNES")
         puerta= t.abrir_puerta(acceso)
-        print(puerta)
-        print(t.pago_pasaje(puerta,"VIERNES",4.00))
         self.assertEqual(t.pago_pasaje(puerta,"VIERNES",4.00), 1)
 
     def test_pasajeTrabajador_invalido(self):
@@ -78,6 +76,20 @@ class TestTarjeta(unittest.TestCase):
         acceso = t.validar_tarjetas("TRABAJADOR", "0021015", "11H00", "LUNES")
         puerta= t.abrir_puerta(acceso)
         self.assertEqual(t.pago_pasaje(puerta,"LUNES",0.00), 0)
+
+    def test_pasajeTrabajador_invalido1(self):
+        #FIN DE SEMANA
+        t = Tarjeta()
+        acceso = t.validar_tarjetas("TRABAJADOR","0021015","14H00","SABADO")
+        puerta= t.abrir_puerta(acceso)
+        self.assertEqual(t.pago_pasaje(puerta,"SABADO",5.20), 0)
+
+    def test_pasajeTrabajador_invalido2(self):
+        #FIN DE SEMANA
+        t = Tarjeta()
+        acceso = t.validar_tarjetas("TRABAJADOR","1121015","14H00","DOMINGO")
+        puerta= t.abrir_puerta(acceso)
+        self.assertEqual(t.pago_pasaje(puerta,"DOMINGO",2.20), 0)
 
     def test_pasajeEstudiante_valido(self):
         t = Tarjeta()
@@ -90,7 +102,6 @@ class TestTarjeta(unittest.TestCase):
         t = Tarjeta()
         acceso = t.validar_tarjetas("ESTUDIANTE", "4721015", "15H00", "VIERNES")
         puerta= t.abrir_puerta(acceso)
-        print(puerta)
         self.assertEqual(t.pago_pasaje(puerta,"VIERNES",3.00), 1)
 
     def test_pasajeEstudiante_invalido(self):
@@ -99,6 +110,8 @@ class TestTarjeta(unittest.TestCase):
         acceso = t.validar_tarjetas("ESTUDIANTE", "6921015", "13H00", "LUNES")
         puerta= t.abrir_puerta(acceso)
         self.assertEqual(t.pago_pasaje(puerta,"LUNES",0.20), 0)
+
+
 
 if __name__ == '__main__':
     unittest.main()
