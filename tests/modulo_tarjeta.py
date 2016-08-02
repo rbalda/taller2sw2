@@ -3,6 +3,14 @@ class Tarjeta:
 		self.tarjeta = tarjeta
 		self.tipo_empleado = tipo_empleado
 
+	def __init__(self, tarjeta, tipo_empleado, nombre, apellido, saldo):
+		self.tarjeta = tarjeta
+		self.tipo_empleado = tipo_empleado
+		self.saldo = saldo
+		self.nombre = nombre
+		self.apellido = apellido
+
+	
 	# false or true Valid or invalid
 	def validarLongitud(self):
 		size = len(self.tarjeta)
