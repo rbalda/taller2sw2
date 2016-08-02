@@ -56,6 +56,12 @@ class AccesoTestCase(unittest.TestCase):
         self.assertEquals(self.acceso.getAcceso(
                 self.tarjeta.validarTarjeta("0024234"),0,6)
                 ,1)
+    
+    #caso de ´prueba: codigo como entero
+    def test_9(self):
+        self.assertEquals(self.acceso.getAcceso(
+                self.tarjeta.validarTarjeta(0024234),0,6)
+                ,0)
 
 
 if __name__ == "__main__":
