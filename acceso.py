@@ -1,3 +1,5 @@
+
+
 def brindar_acceso(permiso, hora, dia):
 	dia_laborables = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes"}
 	fin_de_semana = {"Sabado", "Domingo"}

@@ -5,3 +5,4 @@ def validar_tarjeta(codigo_acceso):
 		return "estudiante"
 	else:
 		return "invalido"
+
