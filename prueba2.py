@@ -24,8 +24,7 @@ class AddTest(unittest.TestCase):
     def test_cobrarPasaje_Sabado(self):
         self.assertEqual(self.pasaje.valor_cobrar(6,0.25,0),0)
 
-
-   
+  
 
 if __name__=='__main__':
    unittest.main()
