@@ -3,9 +3,9 @@ class Programa():
 
     #Verificación si se premite el acceso
     def verificar_acceso(self,tarjeta,dia,hora):
-        tarjeta_valida = Programa.modulo_1_verificar_tarjeta(tarjeta)
+        tarjeta_valida = Programa.modulo_1_verificar_tarjeta(self,tarjeta)
         if(tarjeta_valida[0]):
-            if(Programa.modulo_2_acceso_valido(tarjeta_valida[1],dia,hora)):
+            if(Programa.modulo_2_acceso_valido(self, tarjeta_valida[1],dia,hora)):
                 return("Acceso Concedido")
             else:
                 return ("Acceso Denegado")
@@ -14,7 +14,7 @@ class Programa():
 
     #Módulo 1
     #Verifica si la tarjeta es válida además de identificar el tipo de persona al que pertenece
-    def modulo_1_verificar_tarjeta(tarjeta):
+    def modulo_1_verificar_tarjeta(self,tarjeta):
         numero_valido = Programa.numero_tarjeta_es_valida(tarjeta)
         tipo_persona = ""
         if(numero_valido):
@@ -38,7 +38,7 @@ class Programa():
 
     #Módulo 2
     #Verificar si el acceso pedido es válido
-    def modulo_2_acceso_valido(tipo_persona, dia, hora):
+    def modulo_2_acceso_valido(self, tipo_persona, dia, hora):
         dia_valido = Programa.validar_dia(dia)
         hora_valida = Programa.validar_hora(hora)
         if(dia_valido and hora_valida):
@@ -65,9 +65,10 @@ class Programa():
             if(dia>=6 and dia<=7):
                 if(hora>=10 and hora<=15):
                     return True
-        if(dia>=1 and dia<=5):
-            if(hora>=8 and hora<=18):
-                return True
+        if(tipo_persona == "Estudiante"):
+            if(dia>=1 and dia<=5):
+                if(hora>=8 and hora<=18):
+                    return True
         return False
 
     #Modulo 3
@@ -75,7 +76,7 @@ class Programa():
     #En esta función tarjeta va a ser un array que contiene [Código, Nombres y apellidos, Saldo]
     def modulo_3_sistema_pagos(self, tarjeta, dia):
         if(len(tarjeta) == 3):
-            codigo_tarjeta_valida = Programa.modulo_1_verificar_tarjeta(tarjeta[0])
+            codigo_tarjeta_valida = Programa.modulo_1_verificar_tarjeta(self,tarjeta[0])
             if(codigo_tarjeta_valida[0]):
                 if(Programa.validar_dia_expreso(dia)):
                     if(dia>=1 and dia <=4):
