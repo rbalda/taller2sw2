@@ -27,4 +27,19 @@ def test_sistema():
     assert puerta.isAccesoConcedido(tarjeta.esEmpleado(empleado_tarjeta), 6, 12) == True
     assert puerta.isAccesoConcedido(tarjeta.esEmpleado(empleado_tarjeta), 1, 15) == True
 
+def test_horarios_invalidos():
+    assert puerta.isAccesoConcedido(tarjeta.esEmpleado("0034567"), 9, 6) == False
+    assert puerta.isAccesoConcedido(tarjeta.esEmpleado("0034567"), 2, 55) == False
+    
+def test_exceptions():
+    try:
+        raisedException = False
+        tarjeta.esEmpleado("534")
+
+    except ValueError:
+        raisedException = True
+    assert raisedException
+
 test_sistema()
+test_horarios_invalidos()
+test_exceptions()
