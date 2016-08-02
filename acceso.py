@@ -43,8 +43,17 @@ def acceso(tarjeta, date, dia):
             return 0
 
 def pagoExpreso(tarjeta, dia):
-    if dia in range(1, 6) and validarTarjeta(tarjeta) != -1:
-        return 1
+    if validarTarjeta(tarjeta) != -1:
+        if dia in range(1, 5):
+            if tarjeta.saldo >= 0.25:
+                tarjeta.saldo -= 0.25 
+                return 1
+            else:
+                return 0
+        elif dia == 5:
+            return 1
+        else:
+            return 0
     else:
         return 0
 

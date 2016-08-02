@@ -52,21 +52,24 @@ class SimpleTestCase(unittest.TestCase):
         assert acceso(tarjeta, "11:30:32", 7) == 0
 
     def testM(self):
-        tarjeta = Tarjeta("Leo", "Eras", "0110234", 2.50)
-        assert pagoExpreso(tarjeta, 6) == 0
+        tarjeta = Tarjeta("Leo", "Eras", "0110234a", 2.50)
+        assert pagoExpreso(tarjeta, 2) == 0
 
     def testN(self):
         tarjeta = Tarjeta("Leo", "Eras", "0110234", 2.50)
-        assert pagoExpreso(tarjeta, -1) == 0
+        assert pagoExpreso(tarjeta, 4) == 1
 
     def testO(self):
-        tarjeta = Tarjeta("Leo", "Eras", "0110234", 2.50)
-        assert pagoExpreso(tarjeta, 5) == 1
+        tarjeta = Tarjeta("Leo", "Eras", "0110234", 0.15)
+        assert pagoExpreso(tarjeta, 4) == 0
 
     def testP(self):
-        tarjeta = Tarjeta("Leo", "Eras", "01102341", 2.50)
-        assert pagoExpreso(tarjeta, 3) == 0
+        tarjeta = Tarjeta("Leo", "Eras", "0110234", 0.15)
+        assert pagoExpreso(tarjeta, 5) == 1
 
+    def testQ(self):
+        tarjeta = Tarjeta("Leo", "Eras", "0110234", 2.50)
+        assert pagoExpreso(tarjeta, 6) == 0
         
 if __name__ == "__main__":
     unittest.main()
