@@ -65,39 +65,67 @@ class Test(unittest.TestCase):
 
     def test13(self):
         t = Tarjeta()
+        t.setAcceso(1)
         t.setSaldo(0)
         self.assertEquals(t.esPagoValido(5), 1)
 
     def test14(self):
         t = Tarjeta()
+        t.setAcceso(1)
         t.setSaldo(0.5)
-        self.assertEquals(t.esPagoValido(1,), 1)
+        self.assertEquals(t.esPagoValido(1), 1)
 
     def test15(self):
         t = Tarjeta()
+        t.setAcceso(1)
         t.setSaldo(0)
         self.assertEquals(t.esPagoValido(1), 0)
 
     def test16(self):
         t = Tarjeta()
+        t.setAcceso(1)
         t.setSaldo(0)
         self.assertEquals(t.esPagoValido(7), 0)
 
     def test17(self):
         t = Tarjeta()
+        t.setAcceso(1)
         t.setSaldo(0)
         self.assertEquals(t.esPagoValido(1.5), 0)
 
     def test18(self):
         t = Tarjeta()
+        t.setAcceso(1)
         t.setSaldo(-0.5)
         self.assertEquals(t.esPagoValido(1), 0)
 
     def test19(self):
         t = Tarjeta()
+        t.setAcceso(1)
         t.setSaldo(0)
         self.assertEquals(t.esPagoValido(-1), 0)
 
+    # Pruebas de integracion
+    def test20(self):
+        t = Tarjeta()
+        t.setSaldo(1)
+        t.setNumero("0012345")
+        acceso = t.esHorarioValido(1,10)
+        self.assertEquals(t.esPagoValido(1), 1)
+
+    def test21(self):
+        t = Tarjeta()
+        t.setSaldo(0)
+        t.setNumero("0012345")
+        acceso = t.esHorarioValido(1,10)
+        self.assertEquals(t.esPagoValido(1), 0)
+
+    def test22(self):
+        t = Tarjeta()
+        t.setSaldo(1)
+        t.setNumero("0012345")
+        acceso = t.esHorarioValido(0,10)
+        self.assertEquals(t.esPagoValido(1), 0)
 
 
 if __name__ == '__main__':
