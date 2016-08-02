@@ -8,8 +8,8 @@ before_install:
 
 script:
   #- python prueba.py
-  - python -m coverage run prueba.py
   - python -m coverage run prueba2.py
+  #- python -m coverage run prueba2.py
 
 after_script:
   coveralls
