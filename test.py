@@ -32,5 +32,11 @@ class TestFinanciero(unittest.TestCase):
     def test_9(self):
         self.assertEqual(self.Acceso.acceso(self.Acceso.validar("7712345"), "18h30", 1), 0)
 
+    def test_10(self):
+        self.assertEqual(self.Acceso.acceso(self.Acceso.validar("7712345"), "08h00", 1), 1)
+
+    def test_11(self):
+        self.assertEqual(self.Acceso.acceso(self.Acceso.validar("7712345"), "08h00", 7), 0)
+
 if __name__ == '__main__':
 	unittest.main()
