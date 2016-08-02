@@ -1,8 +1,6 @@
-from django.test import TestCase
 import unittest
 
-# Create your tests herefdsfdsfdsf.
-#creando nueva pruebita
+
 '''
 respuesta(self,idTarjeta,edad,altura,genero):
 def respuesta(self,tipoUsuario,dia,hora):
@@ -98,6 +96,9 @@ class ProbarSistemaPuerta(unittest.TestCase):
         puerta = Puerta()
         resp = puerta.respuesta(tipoUsu,5,'10h00')
         self.assertEqual(resp,0)
+
+if __name__ == '__main__':
+    unittest.main()
 
     
     
