@@ -30,3 +30,15 @@ class Acceso():
                     return 0
             else:
                 return 0
+
+    def pago(id,dia,saldo):
+        if(dia >= 1 and dia <= 4):
+            if(saldo<0.25):
+                return 0
+            else:
+                return 1
+        else:
+            if(dia == 5):
+                return 1
+            else
+                return 0
