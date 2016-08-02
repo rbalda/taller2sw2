@@ -19,7 +19,7 @@ class Validador():
                                 return 'EST'
                         else:
                                 return None
-                elif(idTarjeta[0] != '0' and  idTarjeta[1] != '0'):
+                else:
                         edadValida = edad >= 18 and edad <= 100
                         alturaValida = altura > 100 and altura < 300
                         generoValido = genero == 0 or genero == 1
@@ -27,8 +27,7 @@ class Validador():
                                 return 'EMP'
                         else:
                                 return None
-                else:
-                        return None
+
                         
                         
                 
