@@ -33,7 +33,7 @@ class TestAcceso (unittest.TestCase):
         self.assertEqual(verificaAccesso.tieneAcceso ("1234567", datetime(2016, 8, 1, 7, 59, 0)),0)    
 
     def test_codigoEstudianteFechaFinde (self):
-        self.assertEqual(verificaAccesso.tieneAcceso ("1234567", datetime(2016, 8, 1, 12, 0, 0)),0)    
+        self.assertEqual(verificaAccesso.tieneAcceso ("1234567", datetime(2016, 8, 6, 12, 0, 0)),0)    
 
 
     def test_codigoEmpleadoFechaOK (self):
@@ -44,10 +44,10 @@ class TestAcceso (unittest.TestCase):
         self.assertEqual(verificaAccesso.tieneAcceso ("0034567", datetime(2016, 8, 6, 12, 0, 0)),1)    
 
 
-    def test_codigoEstudianteFechaFindeMayor (self):
+    def test_codigoEstudianteFechaFindeMenor (self):
         self.assertEqual(verificaAccesso.tieneAcceso ("0034567", datetime(2016, 8, 6, 9, 59, 0)),0)    
 
-    def test_codigoEstudianteFechaFindeMenor (self):
+    def test_codigoEstudianteFechaFindeMayor (self):
         self.assertEqual(verificaAccesso.tieneAcceso ("0034567", datetime(2016, 8, 6, 15, 1, 0)),0)    
 
 
