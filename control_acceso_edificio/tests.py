@@ -98,8 +98,6 @@ class ProbarSistemaPuerta(unittest.TestCase):
         resp = puerta.respuesta(tipoUsu,5,'10h00')
         self.assertEqual(resp,0)
 
-'''Pruebas para el modulo 3 de pasajes'''
-
     def test_escenario13(self):
         sistCobro = sistemaPago()
         resp = sistCobro.respuesta('Ayala','Jorge','0012345',0.50,1)
