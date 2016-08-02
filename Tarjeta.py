@@ -1,6 +1,17 @@
 
 class Tarjeta:
 
+    nombre = ""
+    apellido = ""
+    codigo = ""
+    saldo = 0.0
+
+    def __init__(self,nombre,apellido,codigo,saldo):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.codigo = codigo
+        self.saldo = saldo
+
     def obtener_hora(self,hora):
         h = int(hora[0])
         h1 = int(hora[1])
@@ -47,6 +58,8 @@ class Tarjeta:
             if(dia == "LUNES" or dia== "MARTES"or dia == "MIERCOLES" or dia== "JUEVES"):
                 saldo = valorTarjeta - pasaje
                 if(saldo >= 0):
+                    self.saldo = saldo
+                    print(self.saldo)
                     return 1
                 else:
                     return 0
