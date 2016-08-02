@@ -1,5 +1,5 @@
 def cancelado(dia, saldo):
-    if dia < 0 and dia > 4:
+    if dia < 0 or dia > 4:
         return 0
     if saldo < 0:
         return 0

@@ -50,3 +50,4 @@ def test_pasaje():
 test_sistema()
 test_horarios_invalidos()
 test_exceptions()
+test_pasaje()
