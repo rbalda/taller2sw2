@@ -30,5 +30,3 @@ def validate(card_digits):
             return [True,'student']
         elif student == 0:
             return [True, 'employee']
-    else:
-        return [False,'is not a valid code']
