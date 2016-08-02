@@ -22,9 +22,9 @@ class Card:
     #         self.code=value
     #         return
     #     return self.code
-
-    def credit(self, value):
-        if value:
-            self.credit=value
-            return
-        return self.credit
+    #
+    # def credit(self, value):
+    #     if value:
+    #         self.credit=value
+    #         return
+    #     return self.credit
