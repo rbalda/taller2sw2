@@ -40,3 +40,22 @@ class Tarjeta:
              return 1
          else:                              #ACCESO DENEGADO
              return 0
+
+    def pago_pasaje(self, acceso, dia, valorTarjeta):
+        pasaje= 0.25
+        if(acceso==1):
+            if(dia == "LUNES" or dia== "MARTES"or dia == "MIERCOLES" or dia== "JUEVES"):
+                saldo = valorTarjeta - pasaje
+                if(saldo >= 0):
+                    return 1
+                else:
+                    return 0
+            elif(dia== "VIERNES"):
+                return 1
+            elif(dia== "SABADO" or dia=="DOMINGO"):
+                return 0
+            else:
+              print("El codigo que ingreso es incorrecto.")
+              return 0
+        else:
+            return 0
