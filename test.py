@@ -1,4 +1,4 @@
-from access_control import insert_day_and_hour
+from access_control import validate_day_and_hour
 from CardValidator import validate
 import unittest
 
@@ -28,16 +28,31 @@ class TestSystem(unittest.TestCase):
         self.assertEqual(response,False)
 
     def test_valid_day_and_hour(self):
-        self.assertEqual(insert_day_and_hour("1","12:00"),True)
+        self.assertEqual(validate_day_and_hour("employee","1","12:00"),True)
 
     def test_invalid_day_number(self):
-        self.assertEqual(insert_day_and_hour("8","12:00"),False)
+        self.assertEqual(validate_day_and_hour("employee","8","12:00"),False)
 
     def test_invalid_day_string(self):
-        self.assertEqual(insert_day_and_hour("lunes","12:00"),False)
+        self.assertEqual(validate_day_and_hour("employee","lunes","12:00"),False)
 
     def test_invalid_Hour(self):
-        self.assertEqual(insert_day_and_hour("1","32:00"),False)
+        self.assertEqual(validate_day_and_hour("employee","1","32:00"),False)
+
+    def test_restricted_hour_weekend_employee_day(self):
+        self.assertEqual(validate_day_and_hour("employee","6","09:00"),False)
+
+    def test_restricted_hour_weekend_employee_night(self):
+        self.assertEqual(validate_day_and_hour("employee","6","18:00"),False)
+
+    def test_restricted_day_weekend_student(self):
+        self.assertEqual(validate_day_and_hour("student","6","09:00"),False)
+
+    def test_restricted_hour_week_student_day(self):
+        self.assertEqual(validate_day_and_hour("student","1","07:59"),False)
+
+    def test_restricted_hour_week_student_night(self):
+        self.assertEqual(validate_day_and_hour("student","1","19:00"),False)
 
 
 if __name__ == '__main__':
