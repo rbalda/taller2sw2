@@ -1,12 +1,15 @@
 from datetime import datetime
+from tarjeta import Tarjeta
 
 def validarTarjeta(tarjeta):
+    codigo = tarjeta.codigo
+    
     #Tarjeta invalida
-    if len(tarjeta) != 7 or not tarjeta.isdigit():
+    if len(codigo) != 7 or not codigo.isdigit():
         return -1
 
     #Tarjeta valida
-    header = tarjeta[0:2]
+    header = codigo[0:2]
     if "00" in header:
         return 0
     else:
@@ -38,4 +41,10 @@ def acceso(tarjeta, date, dia):
                 return 0
         else:
             return 0
+
+def pagoExpreso(tarjeta, dia):
+    if dia in range(1, 6) and validarTarjeta(tarjeta) != -1:
+        return 1
+    else:
+        return 0
 
