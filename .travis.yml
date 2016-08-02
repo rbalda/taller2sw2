@@ -6,8 +6,6 @@ before_install:
   - "pip install -r requirements.txt"
 
 script:
-  - "cd control_acceso_edificio"
-  - "python manage.py test"
-  - "coverage run --source=control_acceso_edificio manage.py test"
+  - "python -m coverage run control_acceso_edificio/tests.py"
 
 after_script: "coveralls"
