@@ -30,8 +30,6 @@ class AddTest(unittest.TestCase):
         self.assertEqual(self.codigo.valor_acceso('1221234',7, 14),None)
     def test_diaEstudiante2(self):
         self.assertEqual(self.codigo.valor_acceso('0021234',6, 14),None)
-    def test_cobrarPasaje(self):
-        self.assertEqual(self.pasaje.valor_cobrar(1,1,1),None)
     def test_cobrarPasajeLunes_Si_saldo(self):
         self.assertEqual(self.pasaje.valor_cobrar(1,0.25,1),1)    
     def test_cobrarPasaje_Martes_NO_Saldo(self):
