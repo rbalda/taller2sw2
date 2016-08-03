@@ -6,11 +6,9 @@ from pasaje import Pasaje
 class AddTest(unittest.TestCase):
     def setUp(self):
       self.pasaje = Pasaje()
-
       pass
     def tearDown(self):
       pass
-
 
     def test_cobrarPasajeLunes_Si_saldo(self):
         self.assertEqual(self.pasaje.valor_cobrar(1,0.25,1),1)
