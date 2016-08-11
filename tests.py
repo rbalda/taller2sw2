@@ -40,7 +40,7 @@ class ProbarSistemaAcceso(unittest.TestCase):
         identi = acceso_edi.verificar_id(identificacion=0012345)
         resultado = acceso_edi.permiso(id=identi, hora=18, dia=6)
         self.assertEqual(resultado,0)
-                         
+
     def test_escenario4(self):
 
         acceso_edi = Acceso()
@@ -110,21 +110,21 @@ class ProbarSistemaAcceso(unittest.TestCase):
         acceso_edi = Acceso()
         identi = acceso_edi.verificar_id(identificacion=0034567)
         resultado = acceso_edi.permiso(id=identi, dia=3, saldo=5.00)
-        self.assertEqual(resultado,1)        
+        self.assertEqual(resultado,1)
 
     def test_escenario10(self):
 
         acceso_edi = Acceso()
         identi = acceso_edi.verificar_id(identificacion=0034567)
         resultado = acceso_edi.permiso(id=identi, dia=4, saldo=0.20)
-        self.assertEqual(resultado,0)     
+        self.assertEqual(resultado,0)
 
     def test_escenario11(self):
 
         acceso_edi = Acceso()
         identi = acceso_edi.verificar_id(identificacion=0034567)
         resultado = acceso_edi.permiso(id=identi, dia=5, saldo=3.00)
-        self.assertEqual(resultado,1)     
+        self.assertEqual(resultado,1)
 
     def test_escenario12(self):
 
@@ -138,4 +138,7 @@ class ProbarSistemaAcceso(unittest.TestCase):
         acceso_edi = Acceso()
         identi = acceso_edi.verificar_id(identificacion=0034567)
         resultado = acceso_edi.permiso(id=identi, dia=10, saldo=3.00)
-        self.assertEqual(resultado,1)     
+        self.assertEqual(resultado,1)
+
+if __name__ == '__main__':
+    unittest.main()
